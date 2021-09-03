@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 // routes
 const indexRouter = require('./routes/index');
 const authorsRouter = require('./routes/authors');
+const booksRouter = require('./routes/books');
 
 // view engine
 app.set('view engine', 'ejs');
@@ -29,6 +30,7 @@ db.once('open', () => console.log('Connected successfuly'));
 // routers
 app.use('/', indexRouter);
 app.use('/authors', authorsRouter);
+app.use('/books', booksRouter);
 
 // port
 app.listen(process.env.PORT || 3000);
